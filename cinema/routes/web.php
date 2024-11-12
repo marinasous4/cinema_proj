@@ -7,6 +7,14 @@ use App\Http\Controllers\PromocaoController;
 use App\Http\Controllers\GeneroController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/filmes', [FilmeController::class, 'index'])->name('filmes.index');
+Route::get('/filmes/create', [FilmeController::class, 'create'])->name('filmes.create');
+Route::post('/filmes', [FilmeController::class, 'store'])->name('filmes.store');
+Route::get('/filmes/{filme}', [FilmeController::class, 'show'])->name('filmes.show');
+Route::get('/filmes/{filme}/edit', [FilmeController::class, 'edit'])->name('filmes.edit');
+Route::put('/filmes/{filme}', [FilmeController::class, 'update'])->name('filmes.update');
+Route::delete('/filmes/{filme}', [FilmeController::class, 'destroy'])->name('filmes.destroy');
+
 Route::get('/', function () {
     return view('welcome');
 });

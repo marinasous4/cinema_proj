@@ -1,3 +1,5 @@
 <x-app-layout>
-oi filmes
+
+<a href="{{ route('filmes.create') }}">Adicionar</a>
+
 </x-app-layout>
