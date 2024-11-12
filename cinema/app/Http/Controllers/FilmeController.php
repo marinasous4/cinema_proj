@@ -61,7 +61,6 @@ class FilmeController extends Controller
         }
 
         return redirect()->back()->with('message', 'Ops! Algo deu errado');
-
     }  
 
     public function destroy(string $id)
@@ -69,6 +68,6 @@ class FilmeController extends Controller
         $this->filme->where('id', $id)->delete();
 
 
-        return redirect()->route('produtos')->with('message', 'Excluído com sucesso!');
+        return redirect()->route('filmes')->with('message', 'Excluído com sucesso!');
     }
 }
