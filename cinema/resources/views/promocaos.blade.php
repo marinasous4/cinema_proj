@@ -1,3 +1,3 @@
 <x-app-layout>
-oi promocao
+oi promocao ola
 </x-app-layout>
