@@ -9,24 +9,20 @@
 </head>
 <body>
     @if (Route::has('login'))
-        <div class="container-fluid bg-gray-800 vh-100 d-flex justify-content-center align-items-center" style="min-height: 100vh">
+        <div class="container-fluid bg-red-800 vh-100 d-flex justify-content-center align-items-center" style="min-height: 100vh">
             <div class="card bg-light shadow-lg" style="width: 18rem; height: 16rem">
-            <img src="{{ asset('img/logo-certa.png') }}" class="card-img-top mx-auto" style="height: 4rem; width: 4rem;">
                 <div class="card-body text-center">
-                    <h5 class="card-title text-center">Farm+</h5>
-                    <p class="card-subtitle text-muted mb-4">Eficiência e organização para transformar sua farmácia!</p>
-                    <h6 class="card-subtitle mb-2 text-center ">Bem vindo! No que posso ajudar?</h6>
+                    <h5 class="card-title text-center">Cinema</h5>
+                    <p class="card-subtitle text-muted mb-4">Mantenh seu cinema sempre organizado.</p>
+                    <h6 class="card-subtitle mb-2 text-center ">Bem vindo! O que precisa?</h6>
                     <div class="mb-2">
                         <nav class="d-flex justify-content-center">
-
 
                             @auth
                                 <a href="{{ url('/dashboard') }}" class="btn btn-outline-info me-2">Painel Inicial</a>
 
-
                                 @else
                                     <a href="{{ route('login') }}" class="btn btn-outline-info me-2">Entrar</a>
-
 
                                 @if (Route::has('register'))
                                     <a href="{{ route('register') }}" class="btn btn-outline-info">Cadastre-se</a>
