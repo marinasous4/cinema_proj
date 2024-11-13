@@ -19,8 +19,8 @@ class FilmeController extends Controller
 
     public function index()
     {
-        $produtos = $this->filme->all();
-        return view('filmes', ['filmes' => $filme]);  
+        $filmes = $this->filme->all();
+        return view('filmes', ['filmes' => $filmes]);  
     }
 
     public function create()
@@ -45,7 +45,7 @@ class FilmeController extends Controller
 
     public function show(string $id)
     {
-        // return view('filme', ['filme' => $filme]);
+       // return view('filmes', ['filmes' => $filme]);
     }
 
     public function edit(Filme $filme)
@@ -56,6 +56,7 @@ class FilmeController extends Controller
     public function update(Request $request, string $id)
     {
         $updated = $this->filme->where('id', $id)->update($request->except(['_token', '_method']));
+
         if($updated){
             return redirect()->back()->with('message', 'Atualizado com sucesso!');
         }
@@ -67,7 +68,6 @@ class FilmeController extends Controller
     {
         $this->filme->where('id', $id)->delete();
 
-
-        return redirect()->route('filmes')->with('message', 'Excluído com sucesso!');
+        return redirect()->route('filmes');
     }
 }
